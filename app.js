@@ -30,8 +30,8 @@ function displayData(data) {
         itemli.className = `item ${items.id}`;
         const itemdiv = document.createElement('div')
         // Create an image element
-        const img = document.createElement('img');
-        img.alt = items.image_url;
+        const img = document.createElement('div');
+        img.className = "img";
 
         // Create a paragraph element for the item name
         const itemName = document.createElement('p');
@@ -41,10 +41,10 @@ function displayData(data) {
         itemName.textContent = `$ ${items.price}`;
 
         // Append the image and item name to the item div
-        itemdiv.appendChild(img);
         itemdiv.appendChild(itemName);
-        itemli.appendChild(itemdiv)
-        itemli.appendChild(itemPrice);
+        itemdiv.appendChild(itemPrice);
+        itemli.appendChild(img)
+        itemli.appendChild(itemdiv);
         itemList.appendChild(itemli);
     });
 }
